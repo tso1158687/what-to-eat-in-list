@@ -6,11 +6,11 @@
     containerClass="moving-box another-class"
     [options]="options"
   />
-  <h1 class="">吃什麼呢？</h1>
+  <h1 class="text-5xl">吃什麼呢？</h1>
   <div class="flex flex-column">
     <section class="god flex relative">
       <div
-        class="flex align-items-center justify-content-center flex-column border-white border-1 overflow-hidden h-3rem w-full text-4xl text-700"
+        class="flex align-items-center justify-content-center flex-column border-white border-1 overflow-hidden h-3rem w-full text-4xl text-600 min-w-200px"
       >
         @if(!showResult){ @for (location of locationList; track $index) {
         <div
@@ -34,7 +34,7 @@
       </div>
     </section>
   </div>
-  <div class="flex">
+  <div class="flex mt-4">
     <p-button label="抽籤！" (click)="startPolling()"></p-button>
   </div>
 
