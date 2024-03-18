@@ -1,16 +1,16 @@
 <div class="flex flex-column align-items-center">
   <ng-lottie
-    width="600px"
-    height="500px"
+    width="100%"
+
     class="w-full"
     containerClass="moving-box another-class"
     [options]="options"
   />
-  <h1>吃什麼呢？</h1>
+  <h1 class="">吃什麼呢？</h1>
   <div class="flex flex-column">
     <section class="god flex relative">
       <div
-        class="flex align-items-center justify-content-center flex-column border-white border-1 overflow-hidden h-3rem w-full text-4xl"
+        class="flex align-items-center justify-content-center flex-column border-white border-1 overflow-hidden h-3rem w-full text-4xl text-700"
       >
         @if(!showResult){ @for (location of locationList; track $index) {
         <div
@@ -40,19 +40,18 @@
 
   @if (showResult) {
 
-  <div class="flex flex-1 w-full h-full">
-    <section id="map" class="map">
+  <div class="flex flex-1 w-full h-full justify-content-center mt-2">
+    <!-- <section id="map" class="map"> -->
       <iframe
         loading="lazy"
-        width="600"
-        height="450"
+        width="100%"
         frameborder="0"
         style="border: 0"
         [src]="getMapSrc()"
         allowfullscreen
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-    </section>
+    <!-- </section> -->
   </div>
   }
 </div>
