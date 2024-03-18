@@ -1,14 +1,54 @@
-<ng-lottie
-  width="600px"
-  height="500px"
-  containerClass="moving-box another-class"
+<div class="flex">
+  <ng-lottie
+    width="600px"
+    height="500px"
+    containerClass="moving-box another-class"
+    [options]="options"
+  />
 
-  [options]="options"
+  <div class="flex flex-column">
+    <section class="god flex relative">
+      <span>吃什麼呢？</span>
+      <h1>
+        <div
+          class="flex align-items-center justify-content-center flex-column border-white border-1 overflow-hidden h-3rem"
+        >
+          @if(!showResult){ @for (location of locationList; track $index) {
+          <div
+            class="relative top-10 text-overflow-clip"
+            [class.anumation-1]="isPolling"
+          >
+            {{ location.title }}
+          </div>
 
-/>
-<p-button label="Submit"></p-button>
-<div class="flex flex-row flex-wrap">
-  <div class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2">1</div>
-  <div class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2">2</div>
-  <div class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2">3</div>
+          } }@else {
+          <div class="relative top-10 text-overflow-clip">
+            {{ selectLocation.title }}
+          </div>
+          }
+        </div>
+      </h1>
+    </section>
+    <div class="flex">
+      <p-button label="抽籤！" (click)="startPolling()"></p-button>
+    </div>
+  </div>
+
+  @if (showResult) {
+
+  <div class="flex flex-1 w-full h-full">
+    <section id="map" class="map">
+      <iframe
+        loading="lazy"
+        width="600"
+        height="450"
+        frameborder="0"
+        style="border: 0"
+        [src]="getMapSrc()"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+  </div>
+  }
 </div>

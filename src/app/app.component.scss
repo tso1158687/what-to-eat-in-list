@@ -1,0 +1,14 @@
+
+@keyframes scroll-1 {
+  from {
+    top: 0;
+  }
+  to {
+    top: -700px;
+  }
+}
+
+.anumation-1 {
+  animation-name: scroll-1;
+  animation-duration: 3s;
+}
